@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MQAbstraction.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,9 @@ namespace MQAbstraction
 {
     public interface IMessageQueue
     {
-        bool Connect();
-        bool IsConnected();
         void SendMessage(string message);
-        string ReceiveMessage();
+        Task<string> ReceiveMessage();
         void Disconnect();
-        
+        void SubscribeToTopics(ITopicHandler handler);
     }
 }

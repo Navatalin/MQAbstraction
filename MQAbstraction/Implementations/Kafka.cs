@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace MQAbstraction.Implementations
 {
-    internal class RabbitMq : IMessageQueue
+    public class Kafka : IMessageQueue
     {
-        private readonly ILogger<RabbitMq> _logger;
+        private readonly ILogger<Kafka> _logger;
         private readonly IConfiguration _configuration;
-        public RabbitMq(ILogger<RabbitMq> logger, IConfiguration configuration)
+        public Kafka(ILogger<Kafka> logger, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;

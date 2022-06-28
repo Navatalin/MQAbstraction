@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MQAbstraction.Handlers
 {
-    internal interface ITopicHandler
+    public interface ITopicHandler
     {
+        bool Handle(string message, string correlationId);
     }
 }
